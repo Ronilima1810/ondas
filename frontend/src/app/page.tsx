@@ -1,5 +1,6 @@
 'use client';
 import {useMemo,useState} from 'react';
+import type {LucideIcon} from 'lucide-react';
 import {Activity,Archive,ArrowRight,BarChart3,Boxes,CheckCircle2,ClipboardList,Download,Filter,Layers3,LayoutDashboard,Menu,PackageCheck,Plus,RefreshCw,Search,ShieldCheck,Truck,Users2,X} from 'lucide-react';
 
 type Status='Planejada'|'Liberada'|'Aguardando impressão'|'Em separação'|'Conferência'|'Concluída';
@@ -12,7 +13,7 @@ const initial:Wave[]=[
  {code:'ONDA-DEMO-005',channel:'E-commerce',orders:52,units:410,operators:4,status:'Concluída',priority:'Média',created:'07:35',progress:100},
  {code:'ONDA-DEMO-006',channel:'Atacado',orders:26,units:630,operators:2,status:'Planejada',priority:'Baixa',created:'10:05',progress:0}
 ];
-const menu=[['dashboard','Visão operacional',LayoutDashboard],['waves','Gestão de ondas',Layers3],['performance','Produtividade',BarChart3],['process','Livro de processos',ClipboardList]];
+const menu: Array<[string,string,LucideIcon]> = [['dashboard','Visão operacional',LayoutDashboard],['waves','Gestão de ondas',Layers3],['performance','Produtividade',BarChart3],['process','Livro de processos',ClipboardList]];
 const stages:Status[]=['Planejada','Liberada','Aguardando impressão','Em separação','Conferência','Concluída'];
 const numeric=n=>new Intl.NumberFormat('pt-BR').format(n||0);
 function Label({children}:{children:React.ReactNode}){return <span className="eyebrow">{children}</span>}
