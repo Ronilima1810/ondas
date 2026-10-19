@@ -1,0 +1,28 @@
+name: Validate Wave Control
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  nextjs-and-api:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build Next.js TypeScript frontend
+        working-directory: frontend
+        env:
+          NEXT_TELEMETRY_DISABLED: '1'
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Validate synthetic API
+        run: |
+          python3 -m pip install -r backend/requirements.txt
+          python3 -m compileall -q backend
+          PYTHONPATH=backend python3 -c "import main; assert len(main.waves())==3 and main.health()['connected_to_production']==False"
