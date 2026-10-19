@@ -15,7 +15,7 @@ const initial:Wave[]=[
 ];
 const menu: Array<[string,string,LucideIcon]> = [['dashboard','Visão operacional',LayoutDashboard],['waves','Gestão de ondas',Layers3],['performance','Produtividade',BarChart3],['process','Livro de processos',ClipboardList]];
 const stages:Status[]=['Planejada','Liberada','Aguardando impressão','Em separação','Conferência','Concluída'];
-const numeric=n=>new Intl.NumberFormat('pt-BR').format(n||0);
+const numeric=(n:number)=>new Intl.NumberFormat('pt-BR').format(n||0);
 function Label({children}:{children:React.ReactNode}){return <span className="eyebrow">{children}</span>}
 function StateTag({value}:{value:Status}){return <span className={'state '+(value==='Concluída'?'done':value==='Em separação'?'active':value==='Planejada'?'plan':'wait')}>{value}</span>}
 function Card({title,sub,children}:{title:string,sub?:string,children:React.ReactNode}){return <section className="card"><div className="card-head"><div><h2>{title}</h2>{sub&&<p>{sub}</p>}</div></div><div className="card-body">{children}</div></section>}
