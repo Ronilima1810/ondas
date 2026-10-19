@@ -2,6 +2,16 @@
 
 **Frontend Next.js/TypeScript de planejamento e controle de ondas de separação.**
 
+## ▶ Live Preview — Wave Control
+
+**[ABRIR GESTÃO DE ONDAS — DEMONSTRAÇÃO INTERATIVA](https://ronilima1810.github.io/formulario-de-matricula/portfolio-demos/ondas/)**
+
+[Portfólio de projetos](https://ronilima1810.github.io/formulario-de-matricula/portfolio-demos/) · [Código Next.js](frontend/)
+
+> Preview estático hospedado no GitHub Pages de `formulario-de-matricula`. Simula filtros, indicadores, andamento das ondas e exportação CSV com dados fictícios; não é o servidor Next.js de produção.
+
+---
+
 O projeto passou de uma estrutura vazia para um frontend demonstrativo editável, com interface de software corporativo orientado a armazéns. Os exemplos de ondas, operadores, prioridades, horários e volumetria são inventados.
 
 ## Funcionalidades
